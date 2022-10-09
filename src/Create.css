@@ -1,0 +1,15 @@
+form {
+  line-height: 150%;
+}
+
+button {
+  width: 100px;
+}
+
+.priority {
+  display: inline-block;
+}
+
+.dueDate {
+  display: inline-block;
+}

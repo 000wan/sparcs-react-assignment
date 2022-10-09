@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import './Feed.css';
 
 const Feed = ({ priority, title, content, dueDate }) => {
-  const Feed = styled.div`
+  const StyledFeed = styled.div`
     border: 1px solid black;
     border-radius: 10px;
     margin: 10px 25px;
@@ -16,14 +17,15 @@ const Feed = ({ priority, title, content, dueDate }) => {
   };
 
   return (
-    <Feed>
-      <h4 className="feed--title">
-        <span style={{color: priorityColor[priority]}}>● </span>
-        {title}
-      </h4>
+    <StyledFeed>
+      <div>
+        <span className="feed--status" style={{color: priorityColor[priority]}}>● </span>
+        <span> </span>
+        <h3 className="feed--title">{title}</h3>
+      </div>
       <p className="feed--content">{content}</p>
-      <p className="feed--date" style={{textAlign: 'end'}}>~ {dueDate}</p>
-    </Feed>
+      <p className="feed--date">~ {dueDate}</p>
+    </StyledFeed>
   );
 };
 

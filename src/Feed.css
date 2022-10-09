@@ -1,0 +1,15 @@
+.feed--status {
+    text-align: start;
+    display: inline-block;
+}
+
+.feed--title {
+    display: inline-block;
+}
+
+.feed--content {
+}
+
+.feed--date {
+    text-align: end;
+}
