@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Feed from './Feed';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>ToDo List</h1>
+      <Feed priority="high" title="Hello, World!" content="First Feed" dueDate="2022/10/10" />
+      <Feed priority="mid" title="Hello, World!" content="Second Feed" dueDate="2022/10/10" />
+      <Feed priority="low" title="Hello, World!" content="Third Feed" dueDate="2022/10/10" />
     </div>
   );
-}
+};
 
 export default App;
