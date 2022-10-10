@@ -2,20 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import './Feed.css';
 
-const Feed = ({ priority, title, content, dueDate }) => {
-  const StyledFeed = styled.div`
+const StyledFeed = styled.div`
     border: 1px solid black;
     border-radius: 10px;
     margin: 10px 25px;
     padding: 5px 20px;
   `
 
-  const priorityColor = {
+const priorityColor = {
     'high': 'red',
     'mid': 'orange',
     'low': 'green'
   };
 
+
+const Feed = ({ priority, title, content, dueDate }) => {
   return (
     <StyledFeed>
       <div>
