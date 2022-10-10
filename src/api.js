@@ -1,30 +1,40 @@
-const dataFactory = (priority, title, content, dueDate) => {
-  return { priority, title, content, dueDate }
+const dataFactory = (id, priority, title, content, dueDate) => {
+  return { id, priority, title, content, dueDate }
 };
 
 const api = {
   _data: [
-    dataFactory("high", "Hello, World!", "First Feed", "2022-10-10"),
-    dataFactory("mid", "Hello, World!", "Second Feed", "2022-10-11"),
+    dataFactory(0, "high", "React Assignment", "2022 Fall SPARCS newbie seminar", "2022-10-16"),
+    dataFactory(1, "mid", "Midterm Exam", "Fall-semester midterm", "2022-10-21"),
+    dataFactory(2, "low", "Halloween", "Happy Halloween!", "2022-10-31")
   ],
   loadData () {
     return this._data;
   },
+
+  _latestID: 2,
+  get latestID() {
+    return this._latestID;
+  },
+  set latestID(id) {
+    this._latestID = id;
+  },
+
   loadFilteredData (filter) {
     if(filter === "all") {
-      return this.loadData().filter(() => true);
+      return this._data.filter(() => true);
     }
     else {
-      return this.loadData().filter(({priority}) => priority===filter);
+      return this._data.filter(({priority}) => priority===filter);
     }
   },
-  add ({priority, title, content, dueDate}) {
-    this._data.push(
-      dataFactory(priority, title, content, dueDate)
-    );
+  add (element) {
+    this.latestID++;
+    element.id = this.latestID;
+    this._data.push(element);
   },
-  remove () {
-
+  remove (removedID) {
+    this._data = this._data.filter(({id}) => id !== removedID);
   }
 }
 

@@ -54,7 +54,7 @@ class Create extends React.Component {
           <textarea id="content" name="content" rows="3" cols="36" value={this.state.content} onChange={this.handleChange} />
         </section>
 
-        <button type="submit">Add</button>
+        <button id="create_form" type="submit">Add</button>
       </form>
     );
   }

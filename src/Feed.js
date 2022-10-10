@@ -16,7 +16,9 @@ const priorityColor = {
   };
 
 
-const Feed = ({ priority, title, content, dueDate }) => {
+const Feed = ({ id, priority, title, content, dueDate, removed, setRemoved }) => {
+  const remove = () => setRemoved(id);
+
   return (
     <StyledFeed>
       <div>
@@ -25,7 +27,9 @@ const Feed = ({ priority, title, content, dueDate }) => {
         <h3 className="feed--title">{title}</h3>
       </div>
       <p className="feed--content">{content}</p>
-      <p className="feed--date">~ {dueDate}</p>
+      <div className="feed--date">~ {dueDate} &nbsp;&nbsp;&nbsp;&nbsp;
+        <button onClick={remove}>Delete</button>
+      </div>
     </StyledFeed>
   );
 };
